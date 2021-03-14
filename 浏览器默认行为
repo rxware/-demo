@@ -1,0 +1,5 @@
+两种方式来阻止默认行为
+    1.主流方式为event对象:e.preventDefault()
+    2.如果处理程序不是使用事件监听而是使用on 则返回false 同样生效
+
+ 如果默认值 被阻止了e.defaultPrevented 的值会变为true 否则false

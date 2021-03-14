@@ -1,0 +1,14 @@
+1.获取类的名字: element.className   获取字符串和element.classList  (返回一个类数组)
+element.classList的方法:
+        element.classList.add/remove(class)  删除或者移除类
+        element.classList.toggle(class)   如果类不存在就添加类 存在就移除它
+        element.classList.contains(class) 检查给定类 返回true或者false
+2.使用ele.style.cssText 可以将样式进行重写
+        例如：div.style.cssText =`
+            color:red;
+            background-color:blue
+        `
+3.设置样式时应该注意单位
+4.读取样式：ele.style只能设置样式 不能读取样式
+           getComputedStyle(ele,[伪元素])  返回一个对象 获取一个元素的样式 （只读）火狐和谷歌兼容
+           ele.currentStyle[css样式]  ie兼容

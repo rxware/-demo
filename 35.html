@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <!--    <script src="36.js"></script>-->
+    <script src="37.js"></script>
+  </head>
+  <body>
+    <script>
+      let p = new Promise((resolve, reject) => {
+        resolve("ok");
+        // reject("报错");
+        // throw "报错";
+        // setTimeout(function () {
+        // resolve("ok");
+        //   reject("这是一个错误");
+        // }, 1000);
+      });
+      let result = p.then((value) => {
+        console.log(11);
+      });
+      //   .then((value) => {
+      //     console.log(22);
+      //   })
+      //   .then((value) => {
+      //     console.log(33);
+      //   })
+      //   .catch((reason) => {
+      //     console.log("报错");
+      //   });
+      // console.log(result);
+
+      // let result = p.catch((reason) => {
+      //   console.log(reason);
+      // });
+      // console.log(result);
+
+      // let r = Promise.resolve("ok");
+      // let r = Promise.resolve(
+      //   new Promise((resolve, reject) => {
+      //     // resolve("ok");
+      //     reject("出错了");
+      //   })
+      // );
+      // console.log(r);
+      //
+      // let err = Promise.reject(
+      //   new Promise((resolve, reject) => {
+      //     resolve("ok");
+      //   })
+      // );
+      // console.log(err);
+
+      let r1 = Promise.resolve("ok");
+      let r2 = Promise.resolve("ok2");
+      let r3 = Promise.resolve("ok3");
+      let allR = Promise.all([r1, r2, r3]);
+      console.log(allR);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+1.ele.offsetParent  返回该元素的父级元素 如果父级元素没有定位则返回body
+2.ele.offsetTop  返回元素与带有定位父元素上方的距离 若父元素没有定位则返回与视口上方的距离
+3.ele.offsetLeft 返回元素与带有定位父元素左边的距离 若父元素没有定位则返回与视口左边的距离
+4.ele.offsetWidth  返回元素的宽度（包含 padding margin container）
+5.ele.offsetHeight 返回元素的高度（包含 padding margin container）
+
+6.ele.clientWidth 返回 元素内容的宽度+padding值
+7.ele.clientHeight 返回 元素内容的高度+padding值
+8.ele.clientTop  border宽度
+9.ele.clientLeft border宽度
+
+
+10 ele.scrollWidth  元素内容的宽度+padding值+加滚动条  包含卷起的内容
+11 ele.scrollHeight 返回 元素内容的高度+padding值+滚动条  包含卷起的内容
+12 ele.scrollTop   纵向滚动条滚动的距离
+13 ele.scrollLeft  横向滚动条滚动的距离
+14 window.scrollBy(起始位置，末位置)  如scrollBy(0,10)  从0往下滚动10 px  (在当前位置执行)
+15.window.scrollTo(pageX,pageY)  滚动到绝对位置  如scrollTo(0,0)  滚动到坐标为00 位置
+16.ele.scrollIntoView(top)  top 为true 使自身 滚动到窗口顶端  为false 滚动到窗口底部
+
+17.禁止滚动  body{
+    overflow:hidden;
+}
+除了 scrollLeft和Top 都是只读

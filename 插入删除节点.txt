@@ -1,0 +1,20 @@
+1.创建元素节点 document.creatElement("元素")
+let div = document.createElement('div');
+2.在当前节点的子元素的开头插入节点 node.prepend("节点或者是字符串")
+3.在当前节点的子元素的结尾插入节点 node.append("节点或者是字符串")
+4.在当前节点的前面插入节点或者字符串 node.before("节点或者字符串")
+5.在当前节点的后面插入节点或者字符串 node.after("节点或者字符串")
+6.将当前节点替换为给定的节点或者字符串 node.replaceWith("节点或者是字符串")
+7.插入html代码:
+      通用方法:elem.insertAdjacentHTML(where,html代码字符串)
+      where:
+        1.beforeBegin 将html代码插入ele的前面
+        2.afterBegin 将html代码插入到ele的子元素的前面
+        3.beforeEnd 将html代码插入到ele的子元素的后面
+        4.afterEnd 将html代码插入ele的后面
+
+8.节点移除 node.remove()
+9.克隆节点: node.cloneNode(boolean)
+            boolean:
+                true  表示深克隆(具有所有特性和子元素)
+                false 表示浅克隆  不包含子元素

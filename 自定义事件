@@ -1,0 +1,13 @@
+事件构造器：内建事件类形成一个层次结构，类似于Dom元素 根是Event类
+let event = new Event(事件类型,options)
+        options: bubbles:true/false 如果是true事件会冒泡
+                 cancelable:true/false 如果是true 默认行为会阻止
+
+当事件对象被创建后，应该使用e.dispatchEvent(event) 调用在元素上"运行它"
+
+
+
+使用e.isTrusted 可以区分真实事件还是通过脚本生成的事件 true 表示为真实的事件
+
+
+对于全新的事件可以使用 new CustomEvent() 参数与event相同  options中增加 detail

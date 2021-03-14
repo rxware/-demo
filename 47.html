@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+  <body>
+    <table id="age-table">
+      <tr>
+        <td id="Age">Search the site</td>
+        <td>
+          <input type="text" />
+        </td>
+        <td>
+          <input type="button" value="search" />
+        </td>
+      </tr>
+    </table>
+    <hr />
+    <form action="">
+      <p>Search the visitors:</p>
+      <span>Age:</span>
+      <input type="radio" id="l18" />
+      <label for="l18">less than 18</label>
+      <input type="radio" id="N2" />
+      <label for="N2">18-50</label>
+      <input type="radio" id="N3" />
+      <label for="N3">more than 50</label><br />
+      <span>Additionally:</span>
+      <input type="text" />
+      <input type="text" />
+      <input type="text" /><br />
+      <input type="button" name="search" value="Search" />
+    </form>
+    <script>
+      let ageTable = document.getElementById("#age-table");
+      let labels = document.querySelectorAll("label");
+      let firstTd = document.querySelector("#Age");
+      let search = document.getElementsByName("search");
+      let FInput = document.querySelectorAll("input")[0];
+      console.log(ageTable);
+      console.log(labels);
+      console.log(firstTd);
+      console.log(search);
+      console.log(FInput);
+    </script>
+  </body>
+</html>

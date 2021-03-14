@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <button>新增</button>
+    <script>
+      let Oul = document.querySelector("ul");
+      let oButton = document.querySelector("button");
+      Oul.onclick = function (ev) {
+        ev = ev || window.event;
+        let target = ev.target;
+        if (target.nodeName.toLowerCase() === "li") {
+          target.style.backgroundColor = "red";
+        }
+      };
+      oButton.onclick = creat;
+      function creat() {
+        let count = 0;
+        let li = document.createElement("li");
+        li.textContent += count;
+        Oul.append(li);
+        count++;
+      }
+    </script>
+  </body>
+</html>

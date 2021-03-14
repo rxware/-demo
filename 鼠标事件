@@ -1,0 +1,49 @@
+鼠标事件类型:
+1.mousedown/mouseup  在元素上点击、释放鼠标按钮  在其中使用事件对象e.button
+    左键：0，中键，1 右键：2  x1:3  x2:4
+2.mouseover/mouseout 鼠标指针从一个元素上移入，移出  会冒泡
+3.mousemove 鼠标在元素上的每个移动都会出发此事件
+4.click 如果是鼠标左键 则在同一个元素上的mousedown及mouseup 相继触发后，触发该事件
+5.contextmenu 在鼠标的右键被按下时触发，还有其他打开上下文菜单的方式，列如使用特殊键盘
+6.坐标: 相对于窗口的坐标：clientX/clientY
+      相对于文档的坐标: pageX/pageY
+7.防止复制: copy 事件
+8.mouseenter 和mouseleave 不会冒泡
+
+键盘事件:
+    1.keyup/keydown  当一个按键按下会触发keydown事件 当一个按键弹起会触发keyup事件
+    事件对象:e.code 获取按键码  e.key 获取按键字符串
+
+ 如果按下一个键足够，它会自动重复 keydown会一次又一次的触发  e.repeat 取消重复
+
+
+ 滚动:scroll
+    1.window.pageYOffset 表示 上下滚动的距离
+
+
+ 表单: 获取表单form   document.forms[0]/document.forms["name"]  当我们有一个表单，其中任何一个命名都可以用form.elements[index]/form.elements[id]来获得
+      let forms = document.forms.my;
+      let elem = forms.elements.one;
+      获取表单：element=form.表单中name
+      反向引用:element.form 获得 表单
+
+
+      select:
+            select的id属性.options 返回当前选择元素的集合
+            select的id属性.value  返回当前选择的value
+            select的id属性.selectedIndex  返回当前选择元素的索引
+
+      创建option元素:new Option("text","value",defaultSelected,selected)
+
+ focus和blur 方法
+
+ tabindex 特性 也就是说：如果我们有两个元素，第一个具有 tabindex="1"，第二个具有 tabindex="2"，然后当焦点在第一个元素的时候，按下 Tab 键，会使焦点移动到第二个元素身上。
+
+ 事件onfocus/onblur  不会冒泡   onfocusin/onfocusout会冒泡  但与前者的功能是一样的
+ 通过document.activeElement 来获取当前获得焦点的元素
+
+ 事件 onchange  当元素改变时会触发change事件   对于input文本框输入一段文字 失去焦点后会触发
+ oninput  当用户输入值时会触发
+
+
+ 手动将表单提交到服务上 form.submit()

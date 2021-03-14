@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #outer {
+        width: 300px;
+        height: 300px;
+        margin: 0 100px;
+        border: 1px solid black;
+        float: left;
+        position: relative;
+      }
+      #outer img {
+        width: 100%;
+        height: 100%;
+      }
+      #outer .inner {
+        width: 150px;
+        height: 150px;
+        background: rgba(221, 216, 10, 0.5);
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .big {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        float: left;
+        position: relative;
+        overflow: hidden;
+      }
+      .big div {
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <img src="./img/1.jpg" alt="" />
+      <div class="inner"></div>
+    </div>
+    <div class="big">
+      <div class="bigI">
+        <img src="./img/1.jpg" alt="" />
+      </div>
+    </div>
+    <script>
+      let outer = document.querySelector("#outer");
+      let inner = document.querySelector(".inner");
+      let bigI = document.querySelector(".bigI");
+      outer.onmouseover = function (e) {
+        inner.style.display = "block";
+      };
+      outer.onmouseout = function () {
+        inner.style.display = "";
+      };
+      outer.onmousemove = function (e) {
+        let x = e.pageX - outer.offsetLeft;
+        let y = e.pageY - outer.offsetTop;
+        let l = x - inner.offsetWidth / 2;
+        let t = y - inner.offsetHeight / 2;
+        if (l <= 0) {
+          l = 0;
+        }
+        if (l >= 150) {
+          l = 150;
+        }
+        if (t <= 0) {
+          t = 0;
+        }
+        if (t >= 150) {
+          t = 150;
+        }
+        inner.style.left = l + "px";
+        inner.style.top = t + "px";
+        //与小图片移动相反的方向
+        bigI.style.left = l * -3 + "px";
+        bigI.style.top = t * -2 + "px";
+      };
+    </script>
+  </body>
+</html>

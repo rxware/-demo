@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+  <body>
+    <button>点击抽奖</button>
+    <script>
+      let btn = document.querySelector("button");
+      function rand(m, n) {
+        return Math.ceil(Math.random() * (n - m + 1)) + m - 1;
+      }
+      btn.addEventListener("click", function () {
+        let promise = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let n = rand(1, 100);
+            if (n <= 30) {
+              resolve(n);
+            } else {
+              reject(n);
+            }
+          }, 1000);
+        });
+        promise.then(
+          (value) => {
+            alert("恭喜中奖" + "中奖号码:" + value);
+          },
+          (reason) => {
+            alert("谢谢回顾" + "中奖号码:" + reason);
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

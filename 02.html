@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #outer {
+        width: 300px;
+        height: 300px;
+        margin: 200px auto;
+        transform: rotateX(15deg) rotateY(30deg);
+        transform-style: preserve-3d;
+      }
+      #outer div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 300px;
+        transition: 2s;
+      }
+      #c1 {
+        background: rgba(255, 199, 122, 0.5);
+        transform: translateY(-150px) rotateX(90deg);
+      }
+      #c2 {
+        background: rgba(25, 99, 132, 0.5);
+        transform: translateY(150px) rotateX(-90deg);
+      }
+      #c3 {
+        background: rgba(2, 199, 12, 0.5);
+        transform: translateX(-150px) rotateY(90deg);
+      }
+      #c4 {
+        background: rgba(25, 199, 122, 0.5);
+        transform: translateX(150px) rotateY(90deg);
+      }
+      #c5 {
+        background: rgba(255, 20, 123, 0.5);
+        transform: translateZ(-150px);
+      }
+      #c6 {
+        background: rgba(255, 19, 12, 0.5);
+        transform: translateZ(150px);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="c1">前</div>
+      <div id="c2">后</div>
+      <div id="c3">左</div>
+      <div id="c4">右</div>
+      <div id="c5">上</div>
+      <div id="c6">下</div>
+    </div>
+  </body>
+</html>

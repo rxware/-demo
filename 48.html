@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li class="Number2" data-toggle="tog">2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+    <script>
+      let N2 = document.querySelector(".Number2");
+      let ul = document.querySelector("ul");
+      // 所有节点 包含 文本，注释，元素
+      console.log(N2.parentNode);
+      console.log(N2.childNodes);
+      console.log(ul.firstChild.textContent);
+      console.log(ul.lastChild);
+      console.log(N2.previousSibling);
+      console.log(N2.nextSibling);
+
+      // 元素节点
+      console.log(N2.parentElement);
+      console.log(N2.children);
+      console.log(ul.firstElementChild.textContent);
+      console.log(ul.lastElementChild.textContent);
+      console.log(N2.previousElementSibling.innerHTML);
+      console.log(N2.nextElementSibling.textContent);
+      console.log(N2.closest("ul")); // 当前元素最近父项
+      console.log(N2.matches(".Number2")); // 用于检查元素与给定的选择器是否相匹配
+      console.log(ul.contains(N2)); // 检查父子级关系
+
+      console.log(N2.outerHTML);
+      console.log(N2.innerHTML);
+      console.log(N2.data);
+      console.log(N2.hasAttribute("id"));
+      console.log(N2.getAttribute("class"));
+      console.log(N2.getAttributeNames());
+      console.log(N2.setAttribute("id", "red"));
+      console.log(N2.removeAttribute("id"));
+      console.log(N2.attributes);
+      console.log(N2.dataset.toggle);
+    </script>
+  </body>
+</html>

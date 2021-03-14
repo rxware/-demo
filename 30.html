@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h1>Promise 封装Ajax请求</h1>
+    <button>发送请求</button>
+    <script>
+      let btn = document.querySelector("button");
+      btn.addEventListener("click", function () {
+        const p = new Promise((resolve, reject) => {
+          let xhr = new XMLHttpRequest();
+          xhr.open("GET", "https://api.apiopen.top/getJoke");
+          xhr.send();
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              if (xhr.status >= 200 && xhr.status < 300) {
+                resolve(JSON.parse(xhr.responseText));
+              } else {
+                reject(xhr.status);
+              }
+            }
+          };
+        });
+        p.then(
+          (value) => {
+            console.log(value);
+          },
+          (reason) => {
+            console.log(reason);
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
